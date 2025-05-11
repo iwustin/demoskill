@@ -1,0 +1,9 @@
+name: demoskill
+version: '1.0'
+main: iwust.demoskill.Demoskill
+api-version: '1.19'
+load: STARTUP
+authors: [iwust]
+commands:
+  skill:
+    description: "Skill command."

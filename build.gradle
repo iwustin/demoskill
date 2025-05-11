@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'io.papermc.paperweight.userdev' version '1.7.4'
+}
+
+group = 'iwust.demoskill'
+version = '1.0'
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(17))
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+dependencies {
+    paperweight.paperDevBundle('1.19.3-R0.1-SNAPSHOT')
+}
+
+tasks {
+    assemble {
+        dependsOn(reobfJar)
+    }
+
+    compileJava {
+        options.encoding = 'UTF-8'
+    }
+}
